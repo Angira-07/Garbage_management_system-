@@ -1,0 +1,469 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* left menu section */
+
+.main .menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top: 80px;
+    align-items: left;
+    color: #fff;
+    background: linear-gradient(to right, #0f4108, #136409);
+    width: 250px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main .menu.active {
+    width: 80px;
+}
+
+.main .menu a {
+    text-align: left;
+    margin: 2px;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding: 10px 0px 10px 10px;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.main .menu a:hover {
+    background-color: #b5d7c7;
+    color: black;
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    padding: 10px 0px 10px 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .menu .menu-item.active {
+    background-color: #fff;
+    color: black;
+    border-radius: 30px;
+    border-left: 10px solid #dd5c20;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    padding: 10px 0px 10px 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    font-size: 16px;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.main .menu .menu-item .icon ion-icon {
+    font-size: 20px;
+}
+
+.main .menu .menu-item .icon,
+.title {
+    margin: 10px;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.submenu a {
+    color: #bdc3c7;
+    padding: 8px 0;
+    padding-right: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submenu a:hover {
+    color: #ffffff;
+}
+
+.submenu.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* right body section */
+
+.container {
+    position: absolute;
+    width: calc(100% - 250px);
+    background: #fff;
+    min-height: 100vh;
+    left: 250px;
+}
+
+.container.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+/* navigation */
+
+nav {
+    position: fixed;
+    width: calc(100%-250px);
+    left: 250px;
+    z-index: 1;
+}
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+    /* Optional: prevents clicking while blurred */
+}
+.container .navbar {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    /* justify-content: space-between; */
+}
+
+.container .navbar .toggle {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.container .navbar ion-icon {
+    font-size: 20px;
+    margin: 10px;
+    background-color: #a8dda1;
+    color: #14623D;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.container .navbar .top-box .notification,
+.container .navbar .top-box .logout {
+    position: relative;
+    cursor: pointer;
+}
+
+.container .navbar .top-box .notification .alert {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    color: red;
+    background: none;
+    font-size: 12px;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+}
+
+.container .navbar .top-box .notification .notification-content {
+    display: none;
+    position: absolute;
+    background-color: #dbf1d8df;
+    width: 200px;
+    height: auto;
+    max-height: 80vh;
+    left: -100px;
+    top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.container .navbar .top-box {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* main section of body */
+
+.container .body {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 50px);
+    background: #fff;
+    top: 50px;
+}
+
+.container .body .box-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-top: 20px; */
+}
+
+.container .body #driver .box-items {
+    width: calc(100% - 250px);
+}
+
+.body .box-items .box {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 120px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.body .box-items .box:hover {
+    scale: 1.05;
+    transition: all 0.3s ease-in-out;
+}
+
+.body .box-items .box.active {
+    box-shadow: 0px 0px 15px 5px #0e4707;
+}
+
+.body .box-items .box .icon {
+    padding: 10px;
+    font-size: 50px;
+    color: #136409;
+    margin: 10px;
+    background-color: rgb(170, 237, 197);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #a8ddc4cd;
+}
+
+.body .box-items .box .number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.body .box-items .box .number p {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #999;
+}
+
+.body .body-item {
+    display: none;
+    /* width: 100%;
+    height: 100%; */
+    margin: 20px;
+    /* background-color: #0c3d26; */
+}
+
+.body .body-item.active {
+    display: block;
+}
+
+/* .body .body-item .table{
+    overflow-y: scroll;
+    overflow-x: scroll;
+} */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background: linear-gradient(to top, #0f4108, #136409);
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    color: white;
+    text-align: center;
+}
+
+thead tr th {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #e6efeb;
+}
+
+tbody tr:hover {
+    /* background-color: #f2f2f2; */
+    cursor: pointer;
+}
+
+table button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #14623D;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+table button:hover {
+    background-color: #0c3d26;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+table button a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(to center, #0c3d26, #14623D);
+}
+
+/* driver details */
+
+#driver .details .detail.active {
+    display: block;
+}
+
+#driver .details .detail {
+    display: none;
+}
+
+/* dustbin order */
+
+#dustbin .dustbinDetails .detail.active {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    /* pointer-events: all;  */
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+#dustbin .dustbinDetails .detail {
+    position: absolute;
+    top: 150%;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    /* pointer-events: none; */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+#dustbin #dustbin_details {
+    position: absolute;
+    width: calc(100%-250px);
+    /* display: none; */
+}
+
+#dustbin {
+    position: relative;
+}
+
+/* #dustbin .dustbinDetails{
+    display: block; */
+/* } */
+
+#dustbin #dustbin_details {
+    /* padding: 20px; */
+    /* background-color: #999; */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    max-width: 500px;
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    /* transform: translate(-50%, -50%); */
+}
+
+#dustbin_details ul {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    padding-top: 50px;
+}
+
+#dustbin_details ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    white-space: wrap;
+    min-width: 150px;
+    border-bottom: 1px solid #ccc;
+}
+
+#dustbin_details strong {
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+}
+
+#dustbin_details p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+#dustbin_details .cross-icon-dustbin-details {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    /* padding: 20px; */
+}
+
+#dustbin_details .cross-icon-dustbin-details ion-icon {
+    font-size: 25px;
+}

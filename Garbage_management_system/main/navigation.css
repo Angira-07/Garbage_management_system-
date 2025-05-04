@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0px;
+}
+
+#logo .text {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo .text .text-1 {
+    font-size: 20px;
+    font-family: "Bodoni MT Black";
+    font-weight: bold
+}
+
+.navigation {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation .nav-list .nav-item {
+    list-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navigation .nav-list .nav-item a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.navigation .nav-list .nav-item a:hover {
+    color: #14623d;
+    transition: all 500ms ease;
+}
+
+.navigation .nav-list {
+    display: flex;
+
+}
+
+.navigation .loginbtn {
+    cursor: pointer;
+    padding: 8px 17px;
+    background-color: #14623D;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+}
+.navigation button{
+    border: none;
+    border-radius: 25px;
+}
+
+.navigation .loginbtn:hover {
+    /* background-color: #0e4b2f; */
+    background-color: #dd5c20;
+    color: #ffffff;
+    scale: 1.04;
+    transition: all 500ms ease;
+}
+
+.navigation .login-box {
+    position: relative;
+    margin: 0px;
+    /* background-color: transparent; */
+}
+
+.navigation .login-list {
+    display: none;
+    position: absolute;
+    background-color: #1e1f1ebf;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px 10px;
+    right: 0px;
+    top: 30px;
+    margin-top: 5px;
+    max-width: 200px;
+    height: 200px;
+    color: #ffffff;
+    z-index: 1;
+    transition: all 500ms ease;
+}
+
+.login-box:hover .login-list {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navigation .login-box .login-list .login-item a {
+    text-decoration: none;
+    color: #ffffff;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navigation .login-list .login-item {
+    /* padding: 0px 10px 10px 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+.navigation .login-box .login-list .login-item a:hover {
+    color: #136409;
+    background-color: #c0eeba;
+    border-left: 2px solid #dd5c20;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}

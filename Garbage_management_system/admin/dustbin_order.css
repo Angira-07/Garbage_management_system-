@@ -1,0 +1,58 @@
+
+
+#dustbinOrder {
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 20%;
+    /* width: calc(100% - 250px); */
+    width: 100%;
+    gap: 20px;
+}
+#dustbinOrder .order-container{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    white-space: wrap;
+    height: 500px;
+    background-color: rgb(223, 247, 208);
+    padding: 20px;
+    gap: 15px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+#dustbinOrder .order-container .order-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#dustbinOrder .add-order-btn{
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#136409;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px #425041;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+#dustbinOrder .add-order-btn:hover{
+    cursor: pointer;
+    transform: scale(1.002);
+    background-color: #0f4a07;
+}

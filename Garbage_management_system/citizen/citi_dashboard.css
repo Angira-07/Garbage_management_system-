@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 100%; */
+}
+
+
+/* left menu section */
+
+.main .menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: safe; */
+    align-items: left;
+    color: #fff;
+    background: linear-gradient(to right, #0f4108, #136409);
+    width: 250px;
+    height: 100%;
+    padding-top: 7%;
+    overflow: hidden;
+}
+
+.main .menu.active {
+    width: 80px;
+}
+
+.main .menu .menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.main .menu a {
+    text-align: left;
+    margin: 2px;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding: 5px 0px 5px 5px;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.main .menu a:hover {
+    background-color: #cef1c9;
+    color: black;
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    padding: 5px 0px 5px 5px;
+    margin-left: 20px;
+    margin-right: 0px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .menu .menu-item.active {
+    background-color: #fff;
+    color: black;
+    border-left: 10px solid #dd5c20;
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    padding: 5px 0px 5px 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    font-size: 16px;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.main .menu .menu-item .icon ion-icon {
+    font-size: 20px;
+}
+
+.main .menu .menu-item .icon,
+.title {
+    margin: 10px;
+}
+
+.container .body .body-item.active {
+    display: block;
+}
+
+.container .body .body-item {
+    display: none;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.submenu a {
+    color: #bdc3c7;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submenu a:hover {
+    color: #ffffff;
+}
+
+.submenu.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* message */
+
+form .message {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+form .message.success {
+    position: relative;
+    color: #0e4b2f;
+    background-color: #6bbe97;
+}
+
+form .message.error {
+    position: relative;
+    color: #4b0e0e;
+    background-color: #be6b6b;
+}
+
+form .message ion-icon {
+    right: 10px;
+    font-size: 25px;
+}
+
+form .message ion-icon {
+    position: absolute;
+}
+
+form .error {
+    color: red;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 4px;
+    display: block;
+    text-align: left;
+}
+
+/* --------- */
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+    /* Optional: prevents clicking while blurred */
+}
+
+.container {
+    position: absolute;
+    width: calc(100% - 250px);
+    background: #fff;
+    min-height: 100vh;
+    left: 250px;
+}
+
+.container .navbar {
+    /* position: fixed; */
+    /* z-index: 10; */
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    /* justify-content: space-between; */
+}
+
+.container .navbar .user {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .navbar .user .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.container .navbar .user .welcome .name {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.container .navbar .user .welcome .time {
+    font-size: 16px;
+}
+
+.container .navbar ion-icon {
+    font-size: 20px;
+    margin: 10px;
+    background-color: #a8dda1;
+    color: #136409;
+    border-radius: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container .navbar .top-box {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    /* position: fixed; */
+    /* z-index: 2000; */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: -1%;
+}
+
+.container .navbar .top-box .cart-icon {
+    position: relative;
+}
+
+.container .navbar .top-box .cart-icon .total-cart {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    z-index: 1;
+}
+
+/* .container .navbar .top-box .notification */
+
+/* profile */
+
+
+
+/* main section of body */
+
+.container .body {
+    background: #fff;
+}
+
+.container .body #dashboard .box-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.body #dashboard .box-items .box {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    height: 120px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.3);
+}
+
+.body #dashboard .box-items .box .icon {
+    padding: 20px;
+    font-size: 50px;
+    color: #14623D;
+    margin: 10px;
+    background-color: #a8ddc4;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #a8ddc4cd;
+}
+
+.body #dashboard .box-items .box .number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.body #dashboard .box-items .box .number p {
+    font-size: 12px;
+    font-weight: 1px bold;
+    text-align: center;
+    color: #999;
+}
+
+
+.container .body {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 50px);
+    background: #fff;
+    top: 50px;
+}
+
+.container .body .box-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-top: 20px; */
+}
+
+.container .body #driver .box-items {
+    width: calc(100% - 250px);
+}
+
+.body .box-items .box {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 120px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.body .box-items .box:hover {
+    scale: 1.05;
+    transition: all 0.3s ease-in-out;
+}
+
+.body .box-items .box.active {
+    box-shadow: 0px 0px 15px 5px #0e4707;
+}
+
+.body .box-items .box .icon {
+    padding: 10px;
+    font-size: 50px;
+    color: #136409;
+    margin: 10px;
+    background-color: rgb(170, 237, 197);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #a8ddc4cd;
+}
+
+.body .box-items .box .number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.body .box-items .box .number p {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #999;
+}
+
+.body .body-item {
+    display: none;
+    /* width: 100%;
+    height: 100%; */
+    margin: 20px;
+    /* background-color: #0c3d26; */
+}
+
+.body .body-item.active {
+    display: block;
+}
+
+
+/* dashboard */
+#dashboard .details .detail.active {
+    display: block;
+    /* visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, visibiliy 0.3s ease; */
+}
+
+#dashboard .details .detail {
+    display: none;
+    /* visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibiliy 0.3s ease; */
+}
+
+
+
+
+
+/* table */
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin: 10px;
+}
+
+thead {
+    background: linear-gradient(to top, #0f4108, #136409);
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    color: white;
+    text-align: center;
+}
+
+thead tr th {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #e6efeb;
+}
+
+tbody tr:hover {
+    /* background-color: #f2f2f2; */
+    cursor: pointer;
+}
+
+table button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #14623D;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+table button:hover {
+    background-color: #0c3d26;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+table button a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(to center, #0c3d26, #14623D);
+}
+
+
+
+/* new complain */
+
+#newComplain form {
+    width: 100%;
+    height: auto;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#newComplain fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+#newComplain legend {
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+#newComplain fieldset .complain-box {
+    display: flex;
+    align-items: center;
+
+}
+
+#newComplain fieldset .complain-box label {
+    width: 200px;
+    font-size: 16px;
+
+}
+
+#newComplain fieldset .complain-box input,
+#newComplain fieldset .complain-box select,
+#newComplain fieldset .complain-box textarea {
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#newComplain .complain-btn {
+    width: 50%;
+    height: 35px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #136409;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px #425041;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#newComplain .complain-btn:hover {
+    cursor: pointer;
+    transform: scale(1.002);
+    background-color: #0f4a07;
+}

@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'inter'; */
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0;
+    padding-top: 50px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("log.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+#login-pages{
+    position: relative;
+    z-index: 200; 
+}
+
+#login-pages .login{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: 100;
+}
+#login-pages .login.unvisible {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.blur {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+#login-pages #citi_close{
+    z-index: 101;
+}
+
+#login-pages ion-icon {
+    font-size: 25px;
+    position: absolute;
+    z-index: 100;
+    right: 1%;
+    top: 5%;
+    cursor: pointer;
+}
+
+#login-pages .container {
+    position: relative;
+    display: flex;
+    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("log.jpg") no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+    width: 75%;
+    height: 450px;
+    z-index: 100;
+}
+
+#login-pages .container .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    width: 58%;
+    height: 100%;
+    text-align: center;
+    gap: 50px;
+    padding: 30px;
+}
+
+#login-pages .container .item h1 {
+    font-size: 40px;
+    color: #136409;
+    /* border-left: 4px solid #dd5c20; */
+    font-family: Helvetica (sans-serif);
+    font-family: cursive;
+}
+
+#login-pages .item .paragraph {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    gap: -1px;
+    line-height: 30px;
+    word-spacing: 5px;
+    color: black;
+}
+
+
+/* .item .paragraph h3::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: #dd5c20;
+    top: 0;
+    left: -10px;
+    } */
+
+#login-pages .item .paragraph p {
+    font-weight: 900;
+    font-size: 22px;
+    padding: 10px;
+    /* color: #dd5c20; */
+    font-family: cursive;
+}
+
+#login-pages .form-item {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    padding: 20px;
+    z-index: 100;
+}
+
+#login-pages #citi_log .form-item h3 {
+    font-size: 25px;
+    position: relative;
+    border-radius: 15px;
+    border-left: 4px solid #dd5c20;
+    border-right: 4px solid #dd5c20;
+    padding: 5px 10px;
+    width: 170px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* font-family: math; */
+}
+
+#login-pages form {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    /* transform: translateY(-70%); */
+    font-size: 17px;
+    font-weight: 600;
+    /* font-family: math; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 101;
+}
+
+#login-pages .input-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 340px;
+    height: 40px;
+    bottom: 5%;
+    border-bottom: 2px solid black;
+    margin: 25px 5px;
+    right: 5%;
+}
+
+#login-pages .input-box input {
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-right: 28px;
+    padding-left: 10px;
+    color: black;
+    font-size: 16px;
+    /* font-family: math; */
+}
+
+#login-pages .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #3a3a3a;
+    border-left: 4px solid #dd5c20;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#login-pages .input-box input:focus~label,
+#login-pages .input-box input:valid~label {
+    top: -5px;
+    color: black;
+}
+
+/* #login-pages .input-error{
+    position: relative;
+    width: 100%;
+    height: 100px;
+} */
+
+#login-pages .error{
+    position: relative; 
+    bottom: -20px;
+    font-size: 14px;
+    color: #bd3b0c;
+    padding-left: 5px;
+    font-weight: 400;
+}
+
+#login-pages .remember-forgot {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px 0px 30px;
+    color: black;
+    right: 5%;
+    position: absolute;
+    bottom: 25%;
+}
+
+#login-pages .btn button {
+    padding: 10px 50px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    color: white;
+    background: linear-gradient(to right,
+    #943f17 0%,
+    #dd5c20 50%,
+    #943f17 100%);
+    background-size: 200% auto;
+    background-position: left center;
+    transition: background-position 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* font-family: math; */
+}
+
+#login-pages .btn button:hover {
+    background-position: right center;
+    transform: translate(-50%, -10%) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+#login-pages a {
+    position: relative;
+    color: #bd4d0c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#login-pages a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #bd4d0c;
+    transition: width 0.3s ease;
+}
+
+#login-pages a:hover::after {
+    width: 100%;
+}
+
+/* .register{
+    height: 10px;
+} */
+#login-pages .register {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    transform: translateX(-15%);
+    color: black;
+}
+
+#login-pages input[type="checkbox"] {
+    transform: scale(1.5);
+    margin: 10px;
+    accent-color: #bd4d0c;
+}
+
+#driver_log {
+    display: flex;
+    flex-direction: column;
+}
+/* #driver_log  h3{
+    position: relative;
+    top: 10%;
+    z-index: 3;
+    
+} */
+#login-pages #driver_log h3 {
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    top: 12%;
+    z-index: 101;
+    border-radius: 15px;
+    border-left: 4px solid #dd5c20;
+    border-right: 4px solid #dd5c20;
+    padding: 10px;
+    width: 325px;
+    /* position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); */
+    /* font-family: math; */
+}
+
+#driver_log .top-error{
+    position: relative; 
+    top: -23px;
+    left: 0;
+    font-size: 15px;
+    color: #bd3b0c;
+    padding-left: 5px;
+    font-weight: 400;
+    width: 100%;
+}
+
+#admin_log, #citi_forgot {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-pages #admin_log h3,
+#login-pages #citi_forgot h3 {
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    top: 12%;
+    z-index: 101;
+    border-radius: 15px;
+    border-left: 4px solid #dd5c20;
+    border-right: 4px solid #dd5c20;
+    padding: 10px;
+    width: 200px;
+}
+
+#login-pages #citi_forgot h3{
+    width: 300px;
+}

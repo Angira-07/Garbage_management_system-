@@ -1,0 +1,218 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dustbin{
+    margin-top: 50px;
+}
+
+#dustbin h1{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+
+#dustbin form{
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    justify-content: center;
+}
+
+#dustbin form fieldset{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dustbin form fieldset legend{
+    text-align: center;
+    margin: 20px;
+    font-size: 22px;
+}
+
+#dustbin form .form-details{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    white-space: nowrap;
+    width: 250px;
+}
+
+#dustbin form .form-details.check{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    white-space: wrap;
+}
+
+#dustbin form .form-details .check_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+#dustbin form .form-details .check_box p{
+    font-size: 16px;
+    width: 200px;
+    margin-left: 90px;
+}
+
+#dustbin form label{
+    width: 200px;
+}
+
+#dustbin form input, select, textarea{
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: antiquewhite;
+    border: none;
+    font-size: 16px;
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dustbin{
+    margin: 30px;
+}
+#dustbin .show{
+    position: relative;
+    top: 30%;
+    height: calc(100%-50px);
+    padding: 20px;
+}
+
+#dustbin .product-container {
+    height: 230px;
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    /* gap: 30px; */
+    background-color: #F2F8EF;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    /* position: absolute; */
+}
+
+#dustbin .product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#dustbin .show #product{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+#dustbin .show #product .product-box.img{
+    background-image:none;
+}
+#dustbin .show #product .product-box{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 25%;
+    position: relative;
+}
+#dustbin .show #product .product-box.img{
+    width: 200px;
+}
+#dustbin .show #product .product-box.img img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+#product .product-box .productDetails{
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
+}
+#product .product-box .add-to-cart a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+#dustbin .add-to-cart{
+    position: absolute;
+    right: -20%;
+    bottom: -100px;
+    width: 150px;
+    height: 35px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#e17b0d;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px #425041;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+}
+#dustbin .add-to-cart:hover{
+    cursor: pointer;
+    transform: scale(1.002);
+    background-color: #aa5d0f;
+}
+
+#product .product-box.time .productDetails p{
+    white-space: wrap;
+    width: 100px;
+}
+
+#product .product-box strong{
+    font-weight: 600;
+}
+
+#product .product-box.first{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+}
+#product .product-box.first .productDetails.name{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+#product .product-box.first .productDetails.price{
+    font-size: 27px;
+    margin: 20px;
+}
+#product .product-box.time{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+#product .product-box.first .productDetails.name strong,
+#product .product-box.first .productDetails.price strong{
+    font-weight: bold;
+}

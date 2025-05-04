@@ -1,0 +1,283 @@
+#dustbinProducts .add {
+    width: 100%;
+    /* height: 250px; */
+    position: relative;
+    margin-top: 10px;
+}
+#dustbinProducts .add #add-product-icon ion-icon{
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    border-radius: 50%;
+    background-color: #a8dda1;
+    color: #14623D;
+    padding: 5px;
+    cursor: pointer;
+}
+#addProduct {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+#addProduct.show-form {
+    height: 230px;
+    margin-bottom: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#dustbinProducts .form-container {
+    /* height: 230px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    background-color: #F2F8EF;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    /* position: absolute; */
+}
+
+#dustbinProducts .form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dustbinProducts .form-container input,
+#dustbinProducts .form-container select {
+    border: none;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    width: 200px;
+    height: 40px;
+    padding: 0px 10px 0px 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+#dustbinProducts .form-container input:focus,
+#dustbinProducts .form-container select:focus{
+    outline: none;
+}
+/* #dustbinProducts .form-box{
+    position: relative;
+    top: 0;
+} */
+
+#dustbinProducts .form-box.img {
+    height: 150px;
+    width: 200px;
+    background-image: url(../photos/admin_img/bin.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0;
+}
+
+#dustbinProducts .form-box.img label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: blanchedalmond;
+    width: auto;
+    height: 35px;
+    gap: 30px;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#dustbinProducts .form-box.img label ion-icon{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+}
+
+#dustbinProducts .add-product-btn{
+    width: 150px;
+    height: 35px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#136409;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px #425041;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#dustbinProducts .add-product-btn:hover{
+    cursor: pointer;
+    transform: scale(1.002);
+    background-color: #0f4a07;
+}
+
+
+#dustbinProducts .show{
+    display: block;
+    height: auto;
+}
+
+#dustbinProducts .product-container {
+    height: 230px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    /* gap: 30px; */
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    /* position: absolute; */
+}
+
+#dustbinProducts .product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#dustbinProducts .show #product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+#dustbinProducts .show #product .product-box.img{
+    background-image:none;
+}
+#dustbinProducts .show #product .product-box{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+#dustbinProducts .show #product .product-box.img{
+    width: 200px;
+}
+#dustbinProducts .show #product .product-box.img img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+#product .product-box .productDetails{
+    text-align: left;
+    white-space: nowrap;
+    width: 100px;
+}
+#product .product-box .add-product-btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+#product .product-box .add-product-btn.delete{
+    background-color: #ad3011;
+}
+#product .product-box .add-product-btn.delete:hover{
+    background-color: #94280d;
+}
+
+#product .product-box strong{
+    font-weight: 600;
+}
+
+#product .product-box.time{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+#product .product-box.time .productDetails p{
+    white-space: wrap;
+    width: 100px;
+}
+#product .product-box.first .productDetails.name{
+    font-size: 25px;
+    margin: 10px;
+}
+
+#product .product-box.first .productDetails.name strong,
+#product .product-box.first .productDetails.price strong{
+    font-weight: bold;
+}
+
+#product .product-box.first .productDetails.price{
+    font-size: 27px;
+    margin: 20px;
+}
+
+/* #edit_product{
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    filter:blur(8px);
+    position: fixed;
+} */
+#edit_product #editProductForm{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 5px;
+    /* opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95); */
+    position: fixed;
+    top: 20%;
+    left: 100%;
+    transform: translateX(-150%);
+    /* transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; */
+}
+/* #edit_product #editProductForm.visible{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    position: fixed;
+    top: 20%;
+    left: 100%;
+    transform: translateX(-150%);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+} */
+/* #dustbin.blur{
+    filter: blur(8px);
+} */
+/* #edit_product #editProductForm input{
+    height: 30px;
+    margin: 10px;
+    padding: 10px;
+} */
+#edit_product #editProductForm .upper-form-box{
+    display: flex;
+    font-display: row;
+}
+
+#edit_product #editProductForm #edit-close-product-icon{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 25px;
+    cursor: pointer;
+}
+

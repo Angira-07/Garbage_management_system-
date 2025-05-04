@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'inter'; */
+}
+
+#register-pages{
+    position: relative;
+    z-index: 100; 
+}
+
+#register-pages .step{
+    display: none;
+    /* transform: scale(0.95); */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: transform 0.3 ease, opacity 0.3 ease, visibility 0.3 ease; */
+}
+#register-pages .step.active{
+    display: block;
+    /* transform: scale(1);
+    /* opacity: 1; */
+    /* visibility: visible; */
+    /* transition: transform 0.3 ease, opacity 0.3 ease, visibility 0.3 ease; */
+}
+
+#register-pages .register {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: 100;
+}
+#register-pages .register.unvisible {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.blur {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+    /* Optional: prevents clicking while blurred */
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("log.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+#register-pages .close{
+    font-size: 25px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#register-pages .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("log.jpg") no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+    width: 75%;
+    height: 550px;
+}
+#register-pages .container h3{
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    top: -15%;
+    left: 25%;
+    transform: translateX(-75%);
+    z-index: 3;
+    border-radius: 15px;
+    border-left: 4px solid #dd5c20;
+    border-right: 4px solid #dd5c20;
+    padding: 10px;
+    width: 150px;
+    /* z-index: 101; */
+} 
+
+#register-pages .container .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    width: 58%;
+    height: 100%;
+    text-align: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+#register-pages .container .item h1 {
+    font-size: 40px;
+    color: #136409;
+    /* border-left: 4px solid #dd5c20; */
+    font-family: Helvetica (sans-serif);
+    font-family: cursive;
+    /* width: 58%; */
+}
+
+#register-pages .item .paragraph {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    gap: -1px;
+    line-height: 30px;
+    word-spacing: 5px;
+    color: black;
+    /* width: 58%; */
+}
+
+#register-pages .item .paragraph p {
+    font-weight: 900;
+    font-size: 22px;
+    padding: 10px;
+    /* color: #dd5c20; */
+    font-family: cursive;
+}
+
+#register-pages .form-item {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    padding: 20px;
+    z-index: 100;
+}
+
+#register-pages form {
+    /* position: absolute; */
+    margin: 10px;
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    /* transform: translateY(-70%); */
+    font-size: 17px;
+    font-weight: 400;
+    /* z-index: 100; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #125315 #e0e0e0;
+}
+
+#register-pages .form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 340px;
+    height: 40px;
+    border-bottom: 2px solid black;
+    margin: 25px 0px;
+}
+#register-pages .form-group.parent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0px;
+    justify-content: space-between;
+    gap: 10px;
+}
+#register-pages .parent .form-sub-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    height: 40px;
+    border-bottom: 2px solid black;
+    margin: 30px 0px;
+}
+#register-pages .parent .form-sub-group input,
+#register-pages .parent .form-sub-group select{
+    width: 170px;
+}
+/* #citi-dob{
+    border-left: 4px solid #dd5c20;
+} */
+
+#register-pages #citi-dob label{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+#register-pages #citi-dob input:focus~label,
+#register-pages #citi-dob input:valid~label{
+    top: 3px;
+    opacity: 1;
+    font-size: 14px;
+    border-left: 4px solid #dd5c20;
+
+}
+#register-pages .phone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+#register-pages .phone .otp{
+    padding: 15px 20px;
+    height: 20px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    border: none;
+    background-color: #dd5c20;
+}
+#register-pages #tel{
+    width: 75%;
+}
+
+/* #register-pages .form-group input,
+#register-pages .form-group select {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-right: 28px;
+    padding-left: 10px;
+    color: black;
+    font-size: 16px;
+} */
+#register-pages .form-group input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-right: 28px;
+    padding-left: 10px;
+    color: black;
+    font-size: 16px;
+}
+
+#register-pages .form-group select {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    color: black;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 2;
+} 
+
+#register-pages .form-group label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #3a3a3a;
+    border-left: 4px solid #dd5c20;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#register-pages .form-group input:focus~label,
+#register-pages .form-group input:not(:placeholder-shown)~label
+ {
+    top: 3px;
+    color: black;
+    font-size: 14px;
+    padding: 3px;
+    background: transparent;
+}
+
+#register-pages #optional select:focus~label,
+#register-pages #optional select:not([value=""])~label,
+#register-pages .form-group select:focus~label,
+#register-pages .form-group select:valid~label{
+    top: -6px;
+    color: black;
+    font-size: 14px;
+    padding: 3px;
+    background: transparent;
+}
+
+#register-pages form fieldset{
+    border: none;
+}
+
+#register-pages form legend{
+    font-size: 22px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+}
+#register-pages form legend::after{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 80%;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #dd5c20;
+}
+
+#register-pages .next{
+    padding: 5px;
+    border: 2px solid #bd3b0c; 
+    border-radius: 50%;
+    font-size: 25px;
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+    cursor: pointer;
+    z-index: 101;
+    transition: background-color 0.3s ease;
+}
+#register-pages .prev{
+    padding: 5px;
+    border: 2px solid #bd3b0c; 
+    border-radius: 50%;
+    font-size: 25px;
+    position: absolute;
+    left: 5%;
+    bottom: 8%;
+    cursor: pointer;
+    z-index: 101;
+    transition: background-color 0.3s ease;
+}
+#register-pages .next:hover,
+#register-pages .prev:hover{
+    /* border: 2px solid #bd3b0c; */
+    background-color: #f6ddd5;
+}
+#register-pages .btn button {
+    padding: 10px 50px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    position: absolute;
+    z-index: 101;
+    /* bottom: 40%; */
+    left: 50%;
+    transform: translateX(-50%);
+    /* transform: translate(-50%, -10%); */
+    color: white;
+    background: linear-gradient(to right,
+    #943f17 0%,
+    #dd5c20 50%,
+    #943f17 100%);
+    background-size: 200% auto;
+    background-position: left center;
+    transition: background-position 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#register-pages .btn button:hover {
+    background-position: right center;
+    transform: translate(-50%, -10%) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+}
+
+#register-pages a {
+    position: relative;
+    color: #bd4d0c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#register-pages a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #bd4d0c;
+    transition: width 0.3s ease;
+}
+
+#register-pages a:hover::after {
+    width: 100%;
+}
+
+#register-pages .redirect {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    /* bottom: 30%; */
+    left: 15%;
+    transform: translateX(-15%);
+    color: black;
+}
+
+#citi_reg .redirect{
+    /* position: absolute; */
+    /* bottom: 30%; */
+    margin-top: 20px;
+}
+
+#register-pages input[type="checkbox"] {
+    transform: scale(1.5);
+    margin: 10px;
+    accent-color: #bd4d0c;
+}
+
+#register-pages .checkbox{
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+}
+#register-pages .checkbox.agreement{
+    margin-top: 10px;
+}
+
+/* #register-pages #citi_message,
+#register-pages #drive_message{
+    position: relative; 
+    bottom: -40px;
+    font-size: 15px;
+    color: #bd3b0c;
+    padding-left: 5px;
+    font-weight: 400;
+} */
+
+#register-pages .error{
+    position: relative; 
+    bottom: -40px;
+    font-size: 14px;
+    color: rgb(189, 21, 12);
+    padding-left: 5px;
+    font-weight: 400;
+}

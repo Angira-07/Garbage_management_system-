@@ -1,0 +1,14 @@
+#dustbin #dustbin_deatails .table{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+}
+
+#dustbin_deatails .column{
+    display: flex;
+    flex-direction: column;
+}
+
+#dustbin_deatails .column ul li{
+    list-style: none;
+}

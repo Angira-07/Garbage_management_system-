@@ -1,0 +1,170 @@
+.container .navbar #user-content{
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #fffdef;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 300px;
+    min-height: 400px;
+    height: auto;
+    /* opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform  0.3s ease; */
+    display: none;
+    z-index: 1;
+}
+.hidden{
+    /* opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform  0.3s ease; */
+    display: none;
+}
+.container .navbar #user-content .name p{
+    font-size: 30px;
+    font-weight: bold;
+    /* margin: 10px; */
+}
+.container .navbar #user-content .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 0px;
+    margin: 0;
+}
+.container .navbar #user-content .contact .phone,
+.container .navbar #user-content .contact .email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container .navbar #user-content .contact p{
+    font-size: 14px;
+    margin: 0;
+}
+.container .navbar #user-content .contact ion-icon,
+.container .navbar #user-content .address ion-icon{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: transparent;
+}
+.container .navbar #user-content .address{
+    margin: 10px 0px;
+    display: flex;
+    align-items: left;
+    justify-content: flex-start;
+    position: relative;
+}
+.container .navbar #user-content .address h1{
+    display: flex;
+    align-items: center;
+}
+.container .navbar #user-content .address p{
+    /* position: relative; */
+    width: 200px;
+    margin: 5px 0px;
+}
+/* .container .navbar #user-content .address ion-icon{
+    position: absolute;
+    top: 0;
+
+} */
+.container .navbar #user-content .address,
+.container .navbar #user-content .address-edit{
+    display: flex;
+    flex-direction: column;
+}
+/* .container .navbar #user-content .delete{
+
+} */
+.container .navbar #user-content .delete button{
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #be6b6b;
+    color: #9a0909;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 10px;
+}
+
+/* address edit form */
+
+.main .container .navbar #user-content .address_edit {
+    position: absolute;
+    left: 90%;
+    bottom: -40%;
+    /* transform: translateY(-90%); */
+    display: none;
+    /* background-color: #622f14; */
+    z-index: 3;
+}
+
+
+.address_edit form{
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 50px 10px 30px 10px;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+}
+.address_edit #add ion-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px;
+    color: black;
+    background-color: transparent;
+}
+.address_edit form .form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    white-space: nowrap;
+    width: 250px;
+}
+.address_edit form .form-group label{
+    width: 200px;
+    padding: 5px;
+}
+.main .container .navbar #user-content .address_edit form .form-group input{
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: none;
+}
+.main .container .navbar #user-content .address_edit form .form-group input:focus{
+    outline: none;
+    /* padding: 10px 15px; */
+    border: 1px solid #14623D;
+    box-shadow: 0px 0px 5px rgba(20, 98, 61, 0.5);
+}
+.address_edit form .form-group.btn button{
+        cursor:pointer;
+        padding: 10px 20px;
+        background-color: #14623D;
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        font-size: 20px;
+        width: 100%;
+        overflow: none;
+}
